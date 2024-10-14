@@ -1,0 +1,287 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+html,
+body {
+  height: 100%;
+  width: 100vw;
+}
+
+h1 {
+  font-size: 135%;
+  padding-top: 0.7em;
+}
+
+.row {
+  margin: 0;
+  padding: 0;
+}
+
+.main-row {
+  overflow: hidden;
+}
+
+#side-panel {
+  background-color: #f9f9f9;
+  height: 70vh;
+  padding-bottom: 10px;
+}
+
+#bottom-panel {
+  height: 30vh;
+  background-color: #f9f9f9;
+}
+
+.leaflet-popup-content {
+  width: 150%;
+  margin: 5px;
+}
+
+.leaflet-popup-content img {
+  height: auto;
+}
+
+.leaflet-tooltip-top:before,
+.leaflet-tooltip-bottom:before,
+.leaflet-tooltip-left:before,
+.leaflet-tooltip-right:before {
+  border: none !important;
+}
+
+#building-list {
+  list-style-type: none;
+
+  margin: 0; /* Remove margins */
+}
+
+#architect-infolist {
+  font-size: 80%;
+}
+
+#architect-description {
+  padding: 0;
+  margin: 0;
+  font-family: "Times New Roman", Times, serif;
+}
+
+#architect-infolist ul {
+  margin: 0;
+}
+
+h3 {
+  font-size: 130%;
+}
+
+#architect-name {
+  padding: 0;
+  margin: 0;
+}
+
+#architect-name-q {
+  font-size: 80%;
+  color: #72777d;
+  margin-left: 0.5em;
+  font-family: "Times New Roman", Times, serif;
+}
+
+#architect-life {
+  font-size: 90%;
+  font-family: "Times New Roman", Times, serif;
+}
+
+#building-list {
+  padding-left: 0.2em;
+}
+
+#building-list li {
+  cursor: pointer;
+}
+
+#building-list li:hover {
+  background-color: yellow;
+}
+
+#listbox-container {
+  height: 30%;
+}
+
+.listbox-area {
+  font-size: 80%;
+  height: 100%;
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+#building-list :nth-child(2n) {
+  background-color: rgb(223, 223, 223);
+}
+
+#architect2 {
+  overflow: hidden;
+}
+
+#architect2 img {
+  float: left;
+  clear: both;
+  padding-right: 0.2em;
+}
+
+.leaflet-popup-content-wrapper,
+.leaflet-popup-tip {
+  background-color: white;
+  border-radius: 0;
+}
+.building-info {
+  overflow: hidden;
+  background-color: rgb(255, 255, 255);
+  color: black;
+}
+
+.building-info figure {
+  float: right;
+  max-width: 65%;
+}
+
+.building-info figcaption img:hover {
+  transform: scale(1.5);
+  cursor: pointer;
+}
+
+.building-info h4 {
+  text-align: center;
+  font-weight: bolder;
+}
+
+.building-info h4 a {
+  text-decoration: none;
+  color: black;
+}
+
+.building-info h5 {
+  text-align: center;
+  font-size: 120%;
+}
+
+.building-data {
+  overflow: hidden;
+}
+
+#notes {
+  position: absolute !important;
+  bottom: 0;
+  width: 100%;
+  z-index: 999;
+  font-size: 80%;
+  color: black;
+}
+
+#notes p {
+  margin: 0;
+}
+
+#notes h4 {
+  font-size: 120%;
+  font-weight: bolder;
+  margin-bottom: 0;
+}
+
+#architect-authority {
+  border: 1px solid #dededf;
+  table-layout: fixed;
+  border-collapse: collapse;
+  border-spacing: 1px;
+  text-align: left;
+  font-size: 75%;
+}
+
+#architect-authority th {
+  border: 1px solid #dededf;
+  background-color: #dcebcf;
+  color: #000000;
+  padding: 5px;
+}
+
+#architect-authority td {
+  border: 1px solid #dededf;
+  background-color: #ffffff;
+  color: #000000;
+  padding: 5px;
+}
+
+.timelineItem {
+  background-color: #dcebcf;
+  font-size: 10px;
+}
+
+.vis-item {
+  border: 0;
+}
+
+.vis-item:hover {
+  cursor: pointer;
+  filter: brightness(105%);
+}
+
+.vis-item.vis-selected {
+  background-color: rgb(206, 241, 240);
+  border-color: rgb(44, 141, 136);
+}
+
+#works-header {
+  font-size: 0.7em;
+  color: #72777d;
+  margin-left: 0.3em;
+  font-family: "Times New Roman", Times, serif;
+}
+
+#building-table {
+  width: 100%;
+}
+
+.clickable-table:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.loading-overlay {
+  backdrop-filter: blur(6px);
+}
+
+#info-button {
+  cursor: pointer;
+  font-size: 70%;
+}
+
+#info-button:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+.each {
+  border-bottom: 1px solid #555;
+  font-size: 90%;
+}
+
+.acItem .name {
+  font-weight: bold;
+}
+
+.acItem .desc {
+  color: #202020;
+  font-size: 80%;
+}
+
+.ui-menu-item .ui-menu-item-wrapper.ui-state-active {
+  background-color: #dcebcf !important;
+  color: black !important;
+  border: 1px solid #b2c5a1 !important;
+}
+
+.modal-body p {
+  margin-bottom: 0.5em;
+}
+
+.modal h6 {
+  font-size: 110%;
+}
