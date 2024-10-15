@@ -3,7 +3,7 @@ Arkitektkartan
 
 This is a map that shows data from Wikidata about architects and the buildings they built.
 
-Available online at: . . . 
+Available online at: [arkitektkartan.wikimedia.se](https://arkitektkartan.wikimedia.se/)
 
 It is developed by Wikimedia Sverige within the project *A Network of Places: Open Linked Building Data as Research Infrastructure*, a collaboration with ArkDes, the Swedish National Heritage Board’s archive, the National Museum of Fine Arts and the National Museum of Science and Technology.
 
