@@ -23,12 +23,15 @@ const queryDict = {
   }
     GROUP BY ?item ?image ?itemLabel ?itemDescription ?dob ?dod ?kulturnav ?natmus ?article ?commonscat ?dimu ?viaf`,
   personBuildings: `SELECT ?ksamsok ?article ?itemDescription ?commonscat ?kulturnav ?locationLabel (SAMPLE(?thumbnail) AS ?thumb) (SAMPLE(?inception) AS ?year) ?image ?item ?itemLabel ?lat ?lon (GROUP_CONCAT(DISTINCT ?instance; SEPARATOR = ", ") AS ?types) WHERE {
-    ?item wdt:P84 wd:__qid__;
-    wdt:P625 ?coords;
-    p:P625 ?statement.
-    ?statement psv:P625 ?node.
-    ?node wikibase:geoLatitude ?lat;
-      wikibase:geoLongitude ?lon.
+?item wdt:P84 wd:__qid__.
+OPTIONAL {
+  ?item wdt:P625 ?coords;
+        p:P625 ?statement.
+  ?statement psv:P625 ?node.
+  ?node wikibase:geoLatitude ?lat;
+        wikibase:geoLongitude ?lon.
+}
+
       OPTIONAL {?item wdt:P1248 ?kulturnav}
       OPTIONAL {?item wdt:P373 ?commonscat}
       OPTIONAL {?item wdt:P1260 ?ksamsok}
