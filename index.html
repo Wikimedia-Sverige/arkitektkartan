@@ -2,169 +2,120 @@
 <html lang="sv">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="shortcut icon" href="assets/icon-information.png">
-  <title>Arkitektkartan · Ett nätverk av platser</title>
-
-  
-  <link href="https://tools-static.wmflabs.org/cdnjs/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" />
-  <link href="https://tools-static.wmflabs.org/cdnjs/ajax/libs/vis-timeline/7.7.3/vis-timeline-graph2d.min.css" rel="stylesheet"/>
-  <link href="https://tools-static.wmflabs.org/cdnjs/ajax/libs/leaflet/1.9.4/leaflet.min.css"  rel="stylesheet"/>
-  <link href="https://tools-static.wmflabs.org/cdnjs/ajax/libs/jquery.tablesorter/2.32.0/css/theme.default.min.css" rel="stylesheet"/>
-  <link href="https://tools-static.wmflabs.org/cdnjs/ajax/libs/jqueryui/1.14.0/themes/base/jquery-ui.min.css" rel="stylesheet"/>
-
-  <script src="https://tools-static.wmflabs.org/cdnjs/ajax/libs/vis-timeline/7.7.3/vis-timeline-graph2d.min.js"></script>
-  <script src="https://tools-static.wmflabs.org/cdnjs/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
-  <script src="https://tools-static.wmflabs.org/cdnjs/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
-  <script src="https://tools-static.wmflabs.org/cdnjs/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-  <script src="https://tools-static.wmflabs.org/cdnjs/ajax/libs/jquery.tablesorter/2.32.0/js/jquery.tablesorter.min.js"></script>
-  <script src="https://tools-static.wmflabs.org/cdnjs/ajax/libs/jqueryui/1.14.0/jquery-ui.min.js"></script>
-  <script src="https://tools-static.wmflabs.org/cdnjs/ajax/libs/jquery.tablesorter/2.32.0/js/widgets/widget-scroller.min.js"></script>
-  <script src="https://tools-static.wmflabs.org/cdnjs/ajax/libs/jquery-loading-overlay/2.1.7/loadingoverlay.min.js"></script>
-  <link href="css/styles.css" rel="stylesheet"/>
-  <script src="src/app-config.js"></script>
-  <script src="src/app.js"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="assets/icon-information.png">
+    <title>Arkitektkartan · Ett nätverk av platser</title>
+    <link href="https://tools-static.wmflabs.org/fontcdn/css?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://tools-static.wmflabs.org/cdnjs/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://tools-static.wmflabs.org/cdnjs/ajax/libs/vis-timeline/7.7.3/vis-timeline-graph2d.min.css" rel="stylesheet" />
+    <link href="https://tools-static.wmflabs.org/cdnjs/ajax/libs/leaflet/1.9.4/leaflet.min.css" rel="stylesheet" />
+    <link href="https://tools-static.wmflabs.org/cdnjs/ajax/libs/jquery.tablesorter/2.32.0/css/theme.default.min.css" rel="stylesheet" />
+    <link href="https://tools-static.wmflabs.org/cdnjs/ajax/libs/jqueryui/1.14.0/themes/base/jquery-ui.min.css" rel="stylesheet" />
+    <script src="https://tools-static.wmflabs.org/cdnjs/ajax/libs/vis-timeline/7.7.3/vis-timeline-graph2d.min.js"></script>
+    <script src="https://tools-static.wmflabs.org/cdnjs/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+    <script src="https://tools-static.wmflabs.org/cdnjs/ajax/libs/leaflet/1.9.4/leaflet.min.js"></script>
+    <script src="https://tools-static.wmflabs.org/cdnjs/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://tools-static.wmflabs.org/cdnjs/ajax/libs/jquery.tablesorter/2.32.0/js/jquery.tablesorter.min.js"></script>
+    <script src="https://tools-static.wmflabs.org/cdnjs/ajax/libs/jqueryui/1.14.0/jquery-ui.min.js"></script>
+    <script src="https://tools-static.wmflabs.org/cdnjs/ajax/libs/jquery.tablesorter/2.32.0/js/widgets/widget-scroller.min.js"></script>
+    <script src="https://tools-static.wmflabs.org/cdnjs/ajax/libs/jquery-loading-overlay/2.1.7/loadingoverlay.min.js"></script>
+    <link href="css/styles.css" rel="stylesheet" />
+    <script src="src/app-config.js"></script>
+    <script src="src/app.js"></script>
 </head>
 
 <body>
-  <div class="main-container ">
-    <div class="row main-row">
-      <div class="col-md-3" id="side-panel">
-
-        <h1><span id="info-button" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"><img
-              src="assets/icon-information.png" width="28px"></span> Arkitektkartan</h1>
-
-
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Ett nätverk av platser – Arkitektkartan</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                <p>Arkitektkartan är framtagen av <a href='https://wikimedia.se/' target="_blank">Wikimedia Sverige</a>
-                  som en del av samarbetsprojektet <a href='https://www.nationalmuseum.se/ett-n%C3%A4tverk-av-platser'
-                    target="_blank">Ett nätverk av platser</a>, tillsammans med ArkDes, Nationalmuseum, Tekniska museet samt
-                    Antikvarisk-topografiska Arkivet vid Riksantikvarieämbetet.</p>
-
-                <h6>Felaktig eller bristfällig data</h6>
-                <p>All data om arkitekterna och deras verk kommer från Wikidata. Wikidata utvecklas mestadels av
-                  volontärer, varför det finns många luckor och förbättringsområden – men det betyder även att
-                  <strong>alla</strong> kan bidra!
-                </p>
-                <p>Endast objekt som har geografiska koordinater på Wikidata visas på kartan.</p>
-                <p>På Wikidata kan en byggnad knytas till arkitekten genom egenskapen <a
-                    href="https://www.wikidata.org/wiki/Property:P84" target="_blank">P84</a> t.ex. <a
-                    href="https://www.wikidata.org/wiki/Q10512751#P84" target="_blank">som här</a>.</p>
-
-                <h6>Upphovsrätt och kod</h6>
-                <p>Koden finns på <a href="https://github.com/Wikimedia-Sverige/arkitektkartan"
-                    target="_blank">GitHub</a> och <a
-                    href='https://github.com/Wikimedia-Sverige/arkitektkartan/blob/main/LICENSE'
-                    target="_blank">licensen är MIT</a>.
-                </p>
-                <p>Data: <a href='https://www.wikidata.org/' target="_blank">Wikidata</a>, <a
-                    href='https://creativecommons.org/publicdomain/zero/1.0/' target="_blank">CC0 1.0.</a></p>
-                <P>Bilder: <a href="https://commons.wikimedia.org/" target="_blank">Wikimedia Commons</a>, se respektive
-                  bildsida.</P>
-                <p>Ikoner: <a href="https://mapicons.mapsmarker.com/" target="_blank">Nicolas Mollet</a>, <a
-                    href='https://creativecommons.org/licenses/by-sa/3.0/' target="_blank">CC BY-SA 3.0</a>.</p>
-                <h6>Kontakt</h6>
-                <p><a href="mailto:alicia.fagerving@wikimedia.se?subject=Arkitektkartan">Skicka ett mejl till
-                    utvecklarna.</a></p>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Stäng</button>
-              </div>
+    <div class="main-container ">
+        <div class="row main-row">
+            <div class="col-md-3" id="side-panel">
+                <h1><span id="info-button" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"><img src="assets/icon-information.png" width="28px"></span> Arkitektkartan</h1>
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Ett nätverk av platser – Arkitektkartan</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body"> <img src="https://upload.wikimedia.org/wikipedia/commons/7/7d/Wikimedia_Sverige_logo_-_vertical.svg">
+                                <p>Arkitektkartan är framtagen av <a href='https://wikimedia.se/' target="_blank">Wikimedia Sverige</a> som en del av samarbetsprojektet <a href='https://www.nationalmuseum.se/ett-n%C3%A4tverk-av-platser' target="_blank">Ett nätverk av platser</a>, tillsammans med ArkDes, Nationalmuseum, Tekniska museet samt Antikvarisk-topografiska Arkivet vid Riksantikvarieämbetet.</p>
+                                <h6>Felaktig eller bristfällig data</h6>
+                                <p>All data om arkitekterna och deras verk kommer från Wikidata. Wikidata utvecklas mestadels av volontärer, varför det finns många luckor och förbättringsområden – men det betyder även att <strong>alla</strong> kan bidra! </p>
+                                <p>Endast objekt som har geografiska koordinater på Wikidata visas på kartan.</p>
+                                <p>På Wikidata kan en byggnad knytas till arkitekten genom egenskapen <a href="https://www.wikidata.org/wiki/Property:P84" target="_blank">P84</a> t.ex. <a href="https://www.wikidata.org/wiki/Q10512751#P84" target="_blank">som här</a>.</p>
+                                <h6>Upphovsrätt och kod</h6>
+                                <p>Koden finns på <a href="https://github.com/Wikimedia-Sverige/arkitektkartan" target="_blank">GitHub</a> och <a href='https://github.com/Wikimedia-Sverige/arkitektkartan/blob/main/LICENSE' target="_blank">licensen är MIT</a>. </p>
+                                <p>Data: <a href='https://www.wikidata.org/' target="_blank">Wikidata</a>, <a href='https://creativecommons.org/publicdomain/zero/1.0/' target="_blank">CC0 1.0.</a></p>
+                                <P>Bilder: <a href="https://commons.wikimedia.org/" target="_blank">Wikimedia Commons</a>, se respektive bildsida.</P>
+                                <p>Ikoner: <a href="https://mapicons.mapsmarker.com/" target="_blank">Nicolas Mollet</a>, <a href='https://creativecommons.org/licenses/by-sa/3.0/' target="_blank">CC BY-SA 3.0</a>.</p>
+                                <h6>Kontakt</h6>
+                                <p><a href="mailto:alicia.fagerving@wikimedia.se?subject=Arkitektkartan">Skicka ett mejl till utvecklarna.</a></p>
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Stäng</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="search-and-dropdown">
+                    <input type="search" placeholder="Sök ett namn..." id="architect-search" name="architect-search" />
+                    <select id="architectSelector">
+                        <option value="*">Eller välj ett av exemplen</option>
+                        <option value="Q347073">Fredrik Blom</option>
+                        <option value="Q959104">Ferdinand Boberg</option>
+                        <option value="Q364454">Adolf W. Edelsvärd</option>
+                        <option value="Q1879491">Léonie Geisendorf</option>
+                        <option value="Q6044893">Adrian C Peterson</option>
+                        <option value="Q5650830">Hans Westman</option>
+                        <option value="Q5464504">Folke Zettervall</option>
+                        <option value="Q735070">Helgo Zettervall</option>
+                        <option value="Q1691965">Johan Fredrik Åbom</option>
+                    </select>
+                </div>
+                <div id="architect-infocard2">
+                    <h3 id="architect-name">Loading...</h3>
+                    <p id="architect-description">
+                        <span id="architect-text"></span>
+                        <span id="architect-life"><span id="architect-dob"></span> <span id="architect-dod"></span></span>
+                    </p>
+                    <div id="architect2">
+                        <img id="architect-portrait" src="assets/placeholder-small.png" width="100px">
+                        <div id="authority-section">
+                            <h6>Auktoritetsdata</h6>
+                            <div id="authority-data" class="link-badges">Loading...</div>
+                            <h6>Wikimedia</h6>
+                            <div id="wikimedia-data" class="link-badges">Loading...</div>
+                        </div>
+                    </div>
+                </div>
+                <div id="listbox-container">
+                    <h3>
+                        <a id="works-link" target="_blank" href="#">Verk</a>
+                        <span id="works-header"></span>
+                    </h3>
+                    <div class="listbox-area">
+                        <table id="building-table" class="tablesorter">
+                            <thead>
+                                <tr>
+                                    <th>år</th>
+                                    <th class="sortInitialOrder-desc">namn</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
             </div>
-          </div>
+            <div class="col-md-9" id="mapdiv">
+            </div>
         </div>
-
-
-
-        <p>
-          <input type="search" placeholder="Sök ett namn..." id="architect-search" name="architect-search" />
-        </p>
-
-
-        <p>
-          <select id="architectSelector">
-            <option value="*">Eller välj ett av exemplen</option>
-            <option value="Q347073">Fredrik Blom</option>
-            <option value="Q959104">Ferdinand Boberg</option>
-            <option value="Q364454">Adolf W. Edelsvärd</option>
-            <option value="Q1879491">Léonie Geisendorf</option>
-            <option value="Q6044893">Adrian C Peterson</option>
-            <option value="Q5650830">Hans Westman</option>
-            <option value="Q5464504">Folke Zettervall</option>
-            <option value="Q735070">Helgo Zettervall</option>
-            <option value="Q1691965">Johan Fredrik Åbom</option>
-          </select>
-        </p>
-
-
-        <div id="architect-infocard2">
-          <h3 id="architect-name">Loading...</h3>
-          <p id="architect-description"></p>
-          <p id="architect-life"><span id="architect-dob"></span> <span id="architect-dod"></span></p>
-          <div id="architect2">
-            <img id="architect-portrait" src="assets/placeholder-small.png" width="100px">
-            <table id="architect-authority">
-              <thead>
-                <tr>
-                  <th>Auktoritetsdata</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr>
-                  <td id="authority-data">Loading...</td>
-                </tr>
-                <tr>
-                  <th>Wikimedia</th>
-                </tr>
-                <tr>
-                  <td id="wikimedia-data">Loading.....</td>
-                </tr>
-                </thead>
-              </tbody>
-            </table>
-
-          </div>
+        <div class="row" id="bottom-panel">
+            <div class="col-md-12" id="notes">
+            </div>
         </div>
-        <div id="listbox-container">
-          <h3>Verk <span id="works-header"></span></h3>
-          <div class="listbox-area">
-            <table id="building-table" class="tablesorter">
-              <thead>
-                <tr>
-                  <th>år</th>
-                  <th class="sortInitialOrder-desc">namn</th>
-                </tr>
-              </thead>
-              <tbody>
-              </tbody>
-            </table>
-          </div>
-        </div>
-
-
-
-
-      </div>
-      <div class="col-md-9" id="mapdiv">
-
-      </div>
     </div>
-
-
-    <div class="row" id="bottom-panel">
-      <div class="col-md-12" id="notes">
-      </div>
     </div>
-  </div>
-  </div>
 </body>
 
 </html>
